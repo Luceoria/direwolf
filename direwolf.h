@@ -274,7 +274,7 @@ char *strtok_r(char *str, const char *delim, char **saveptr);
 char *strcasestr(const char *S, const char *FIND);
 
 
-#if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__APPLE__)
+#if 1 // defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__APPLE__)
 
 // strlcpy and strlcat should be in string.h and the C library.
 

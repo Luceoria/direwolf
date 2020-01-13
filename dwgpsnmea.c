@@ -132,7 +132,7 @@ int dwgpsnmea_init (struct misc_config_s *pconfig, int debug)
  * Should add an option to allow changing someday.
  */
 
-	s_gpsnmea_port_fd = serial_port_open (pconfig->gpsnmea_port, 4800);
+	s_gpsnmea_port_fd = serial_port_open (pconfig->gpsnmea_port, 9600);
 
 	if (s_gpsnmea_port_fd != MYFDERROR) {
 #if __WIN32__
@@ -171,7 +171,7 @@ int dwgpsnmea_init (struct misc_config_s *pconfig, int debug)
 
 MYFDTYPE dwgpsnmea_get_fd(char *wp_port_name, int speed)
 {
-	if (strcmp(s_save_configp->gpsnmea_port, wp_port_name) == 0 && speed == 4800) {
+	if (strcmp(s_save_configp->gpsnmea_port, wp_port_name) == 0 && speed == 9600) {
 	  return (s_gpsnmea_port_fd);
 	}
 	return (MYFDERROR);
@@ -780,7 +780,8 @@ int main (int argc, char *argv[])
 	while (1) {
 	  dwfix_t fix;
 
-	  fix = dwgps_read (&info);
+	  fix = dwgps_read (&info)
+;
 	  text_color_set (DW_COLOR_INFO);
 	  switch (fix) {
 	    case DWFIX_2D:

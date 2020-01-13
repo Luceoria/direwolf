@@ -246,7 +246,7 @@ int main (int argc, char *argv[])
  * We need to set this before any text output.
  */
 
-	t_opt = 1;		/* 1 = normal, 0 = no text colors. */
+	t_opt = 0;		/* 1 = normal, 0 = no text colors. */
 	for (j=1; j<argc-1; j++) {
 	  if (strcmp(argv[j], "-t") == 0) {
 	    t_opt = atoi (argv[j+1]);

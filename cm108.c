@@ -111,7 +111,7 @@ int main (void)
 
 #include "direwolf.h"
 
-#include <libudev.h>
+#include "libudev.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>

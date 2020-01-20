@@ -276,7 +276,7 @@ endif
 # Finding libgps.so* is more difficult because it
 # is in different places on different operating systems.
 
-enable_gpsd := 0 # $(wildcard /usr/include/gps.h)
+#enable_gpsd := $(wildcard /usr/include/gps.h)
 ifneq ($(enable_gpsd),)
 CFLAGS += -DENABLE_GPSD
 LDFLAGS += -lgps
@@ -285,7 +285,7 @@ endif
 
 # Enable hamlib support if header file is present.
 
-enable_hamlib := 0 # $(wildcard /usr/include/hamlib/rig.h /usr/local/include/hamlib/rig.h)
+#enable_hamlib := $(wildcard /usr/include/hamlib/rig.h /usr/local/include/hamlib/rig.h)
 ifneq ($(enable_hamlib),)
 CFLAGS += -DUSE_HAMLIB
 LDFLAGS += -lhamlib

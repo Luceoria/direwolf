@@ -304,7 +304,7 @@ endif
 
 # Enable cm108 PTT support if libudev header file is present.
 
-#enable_cm108 := $(wildcard /usr/include/libudev.h)
+enable_cm108 := $(wildcard /usr/include/libudev.h)
 ifneq ($(enable_cm108),)
 CFLAGS += -DUSE_CM108
 LDFLAGS += -ludev
